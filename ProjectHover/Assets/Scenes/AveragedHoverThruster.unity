@@ -5772,7 +5772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973807a01960a848ab3f7fc679f19ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xAxis: Strafe
+  xAxis: Roll
   yAxis: Yaw
   yaw: Thrust
   HoverThrust: 3000

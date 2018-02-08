@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AveragedHoverThruster : MonoBehaviour {
     [Header("Input Axes")]
-    public string xAxis = "Horizontal";
+    public string xAxis = "Roll";
     public string yAxis = "Yaw";
     public string yaw = "Thrust";
 
@@ -130,6 +130,7 @@ public class AveragedHoverThruster : MonoBehaviour {
         if(grounded || AirControl)
         {
             hoverbody.AddRelativeForce(Vector3.forward * input.z * appliedForwardThrust, ForceMode.Force);
+
             hoverbody.AddRelativeForce(Vector3.right * input.x * (ForwardThrust * StrafeForceRatio), ForceMode.Force);
 
             Vector3 appliedTorque = Vector3.up * RotationTorque * input.y;

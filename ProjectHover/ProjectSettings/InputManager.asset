@@ -6,7 +6,7 @@ InputManager:
   serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
-    m_Name: Strafe
+    m_Name: Roll
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: q
