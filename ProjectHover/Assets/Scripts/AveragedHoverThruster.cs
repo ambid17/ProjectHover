@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AveragedHoverThruster : MonoBehaviour {
     [Header("Input Axes")]
-    public string xAxis = "Roll";
-    public string yAxis = "Yaw";
-    public string yaw = "Thrust";
+    public string roll = "Roll";
+    public string yaw = "Yaw";
+    public string thrust = "Thrust";
 
     [Header("Thrust and Torque")]
     public float HoverThrust = 2000f;
@@ -43,9 +43,9 @@ public class AveragedHoverThruster : MonoBehaviour {
 	
 	// Update in sync with physics time
 	void FixedUpdate () {
-        Vector3 input = new Vector3(Input.GetAxis(xAxis),
-                                    Input.GetAxis(yAxis),
-                                    Input.GetAxis(yaw));
+        Vector3 input = new Vector3(Input.GetAxis(roll),
+                                    Input.GetAxis(yaw),
+                                    Input.GetAxis(thrust));
         GroundCheck();
         HoverNormal();
         ProcessInput(input);
@@ -132,6 +132,14 @@ public class AveragedHoverThruster : MonoBehaviour {
             hoverbody.AddRelativeForce(Vector3.forward * input.z * appliedForwardThrust, ForceMode.Force);
 
             hoverbody.AddRelativeForce(Vector3.right * input.x * (ForwardThrust * StrafeForceRatio), ForceMode.Force);
+if(input.x > 0){
+hoverbody.AddForceAtPosition(Vector3.up * input.x * RotationTorque, thrusters[0].position, ForceMode.Force);
+hoverbody.AddForceAtPosition(Vector3.up * input.x * RotationTorque, thrusters[2].position, ForceMode.Force);
+}else{
+hoverbody.AddForceAtPosition(Vector3.up * -input.x * RotationTorque, thrusters[1].position, ForceMode.Force);
+hoverbody.AddForceAtPosition(Vector3.up * -input.x * RotationTorque, thrusters[3].position, ForceMode.Force);
+}
+
 
             Vector3 appliedTorque = Vector3.up * RotationTorque * input.y;
             appliedTorque = appliedTorque * Time.deltaTime * hoverbody.mass;

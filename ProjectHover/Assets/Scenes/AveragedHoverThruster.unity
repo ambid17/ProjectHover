@@ -5772,9 +5772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973807a01960a848ab3f7fc679f19ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xAxis: Roll
-  yAxis: Yaw
-  yaw: Thrust
+  roll: Roll
+  yaw: Yaw
+  thrust: Thrust
   HoverThrust: 3000
   ForwardThrust: 3000
   RotationTorque: 250
@@ -5787,12 +5787,12 @@ MonoBehaviour:
   - {fileID: 1178610980}
   - {fileID: 1173035428}
   HoverDistance: 3
-  GroundDistance: 2.5
+  GroundDistance: 10
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256
   ClampTilt: 1
-  MaxTilt: 45
+  MaxTilt: 10
   AirControl: 1
   IdleBraking: 1
   IdleBrakeFacter: 1.5
