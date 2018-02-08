@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class AveragedHoverThruster : MonoBehaviour {
     [Header("Input Axes")]
     public string xAxis = "Horizontal";
     public string yAxis = "Vertical";
-    public string yaw = "Horizontal";
+    public string yaw = "Yaw";
 
     [Header("Thrust and Torque")]
     public float HoverThrust = 2000f;
@@ -117,7 +117,12 @@ public class AveragedHoverThruster : MonoBehaviour {
             sumOfNormals += normal;
         }
 
-        return sumOfNormals / normals.Count;
+        if(normals.Count > 0){
+            return sumOfNormals / normals.Count;
+        }else{
+            return Vector3.zero;
+        }
+
     }
 
     void ProcessInput(Vector3 input)
