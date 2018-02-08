@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5772,12 +5772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973807a01960a848ab3f7fc679f19ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xAxis: Horizontal
-  yAxis: Vertical
-  yaw: Horizontal2
-  HoverThrust: 2250
-  ForwardThrust: 1000
-  RotationTorque: 12
+  xAxis: Strafe
+  yAxis: Yaw
+  yaw: Thrust
+  HoverThrust: 3000
+  ForwardThrust: 3000
+  RotationTorque: 250
   StrafeForceRatio: 0.66
   SlopeCompensation: 11.8
   CenterOfMass: {fileID: 262577427}
@@ -5786,7 +5786,7 @@ MonoBehaviour:
   - {fileID: 770966252}
   - {fileID: 1178610980}
   - {fileID: 1173035428}
-  HoverDistance: 1
+  HoverDistance: 3
   GroundDistance: 2.5
   GroundLayer:
     serializedVersion: 2
